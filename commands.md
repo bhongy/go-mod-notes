@@ -18,6 +18,7 @@ go get rsc.io/sampler@v1.3.1
 
 # for adding a new dependency, just import and run `go mod tidy`, `go build` or `go test`
 
-# remove unused dependencies and fetch uninstalled dependencies
+# remove unused dependencies and fetch uninstalled dependencies and update go.mod and go.sum
+# always run `go mod tidy` before committing a go.mod file to version control
 go mod tidy
 ```
