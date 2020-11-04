@@ -21,4 +21,16 @@ go get rsc.io/sampler@v1.3.1
 # remove unused dependencies and fetch uninstalled dependencies and update go.mod and go.sum
 # always run `go mod tidy` before committing a go.mod file to version control
 go mod tidy
+
+# find out why a version of a dependency is included
+go mod why -m github.com/lib/pq
+go mod graph | grep github.com/lib/pq
+
+# tag a release and push to origin
+git tag v0.1.0
+git push origin v0.1.0
+
+# tag a pre-release v2 version and push to origin
+git tag v2.0.0-alpha.1
+git push origin v2.0.0-alpha.1
 ```
