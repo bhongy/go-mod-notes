@@ -47,3 +47,8 @@ git push origin v0.1.0
 git tag v2.0.0-alpha.1
 git push origin v2.0.0-alpha.1
 ```
+
+## Reference
+
+- https://blog.golang.org/using-go-modules
+- https://github.com/golang/go/wiki/Modules
