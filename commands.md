@@ -19,7 +19,7 @@ go list -m -versions rsc.io/sampler
 # upgrade a dependency to a specific version
 go get rsc.io/sampler@v1.3.1
 
-# for adding a new dependency, just import and run `go mod tidy`, `go build` or `go test`
+# for adding a new dependency, just import and run `go mod tidy`, `go install`, `go build`, `go run`, or `go test`
 
 # upgrade all dependencies (direct and indirect) to the latest minor and patch versions
 go get -u ./...
@@ -46,7 +46,23 @@ git push origin v0.1.0
 # tag a pre-release v2 version and push to origin
 git tag v2.0.0-alpha.1
 git push origin v2.0.0-alpha.1
+
+### Environment
+
+# list go environment variables
+go env
+
+# set go env value
+go env -w GOBIN=/somewhere/else/bin
+
+# unset go env value
+go env -u GOBIN
 ```
+
+## Random notes
+
+- `go build` in a non-cmd package directory (or non-main) will just compiles and save the compiled package in the local build cache (no executable binary is produced). It can be used to see if the package compiles.
+- `go install` compiles and produces an executable binary and then moves the binary to `GOBIN` path.
 
 ## Reference
 
